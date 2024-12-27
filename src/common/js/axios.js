@@ -51,4 +51,4 @@ ajax.interceptors.response.use(
   }
 );
 
-export default Object.assign(originAxios, ajax);
+export default ajax;

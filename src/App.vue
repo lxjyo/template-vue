@@ -43,10 +43,7 @@ const menus = [
 const selectedKeys = ref(['home']);
 
 // 退出
-const onClickDropdownMenu = ({ key }) => {
-  if (key === 'logout') {
-  }
-};
+const onClickDropdownMenu = () => {};
 </script>
 
 <template>

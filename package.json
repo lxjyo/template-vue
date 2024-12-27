@@ -3,10 +3,17 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "prepare": "husky install",
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
+  },
+  "lint-staged": {
+    "src/**/*.{vue,js,jsx,cjs,mjs}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   },
   "dependencies": {
     "@ant-design/icons-vue": "^7.0.1",
@@ -24,6 +31,8 @@
     "@vue/eslint-config-prettier": "^7.0.0",
     "eslint": "^8.22.0",
     "eslint-plugin-vue": "^9.3.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.11",
     "prettier": "^2.7.1",
     "resize-observer-polyfill": "^1.5.1",
     "unplugin-vue-components": "^0.22.11",

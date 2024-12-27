@@ -1,5 +1,3 @@
 <script setup></script>
 
-<template>
-  about
-</template>
+<template>about</template>

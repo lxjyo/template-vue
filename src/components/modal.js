@@ -3,15 +3,15 @@ import { createVNode, render as vueRender } from 'vue';
 
 /**
  * 命令式方式显示Modal
- * @param {VNode} Content 
- * @param {Object|null} contentProps 
- * @param {Object} modalProps 
- * @returns 
+ * @param {VNode} Content
+ * @param {Object|null} contentProps
+ * @param {Object} modalProps
+ * @returns
  */
 function showModal(Content, contentProps, modalProps = {}) {
   const container = document.createElement('div');
-   // 创建需要渲染的内容节点
-   const _contentVnode = createVNode(Content, contentProps);
+  // 创建需要渲染的内容节点
+  const _contentVnode = createVNode(Content, contentProps);
 
   // Modal组件的props
   const metadata = Object.create({
@@ -49,7 +49,7 @@ function showModal(Content, contentProps, modalProps = {}) {
       });
   };
 
-  const vm = createVNode(Modal, metadata, () => _contentVnode);
+  let vm = createVNode(Modal, metadata, () => _contentVnode);
 
   // 更新
   function update(config) {
@@ -60,12 +60,11 @@ function showModal(Content, contentProps, modalProps = {}) {
     }
   }
 
-   // 关闭
-   function close() {
+  // 关闭
+  function close() {
     metadata.open = false;
     update(metadata);
   }
-
 
   // 销毁
   function destroy() {
@@ -82,7 +81,7 @@ function showModal(Content, contentProps, modalProps = {}) {
     ..._contentVnode,
     close,
     destroy,
-    update,
+    update
   };
 }
 
