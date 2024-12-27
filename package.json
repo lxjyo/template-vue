@@ -7,12 +7,11 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
+    "lint": "eslint . --ext .vue,.js --fix --ignore-path .gitignore"
   },
   "lint-staged": {
-    "src/**/*.{vue,js,jsx,cjs,mjs}": [
-      "eslint --fix",
-      "prettier --write"
+    "src/**/*.{vue,js}": [
+      "eslint --fix"
     ]
   },
   "dependencies": {

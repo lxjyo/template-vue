@@ -1,5 +1,5 @@
 <script>
-import iconUrl from '@common/imgs/logo.svg?url'
+import iconUrl from '@common/imgs/logo.svg?url';
 export default {
   name: 'BaseLayout',
   inheritAttrs: false,
@@ -36,7 +36,7 @@ export default {
     target() {
       return document.querySelector('#layout-content');
     },
-    onSelect({ item, key, selectedKeys }) {
+    onSelect({ selectedKeys }) {
       this.$emit('update:selectedKeys', selectedKeys);
     }
   }
